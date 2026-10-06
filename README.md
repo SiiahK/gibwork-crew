@@ -90,7 +90,7 @@ The full lifecycle ran on Solana mainnet against the live hackathon bounty: scou
 
 ## MCP server
 
-Setup for Claude Code and other MCP clients: [`docs/mcp-quickstart.md`](docs/mcp-quickstart.md).
+Setup for Claude Code and other MCP clients: [`docs/mcp-quickstart.md`](docs/mcp-quickstart.md). The crew file format is described in [`docs/crew-file.md`](docs/crew-file.md).
 
 ```bash
 CREW_RPC_URL=<rpc> CREW_WALLET=<keypair.json> gibwork-crew-mcp
