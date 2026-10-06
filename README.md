@@ -80,9 +80,17 @@ gibwork-crew ledger  crew.json                                Gibwork bounty ↔
 }
 ```
 
-The demo video and terminal screenshots of a full mainnet run (scout → plan → fund → collect → submit → ledger) will be added before submission.
+### Mainnet run (2026-10-06)
+
+The full lifecycle ran on Solana mainnet against the live hackathon bounty: scout → plan → fund → collect → settle → close → submit (dry run). Recorded outputs, the Solscan link for each transaction, and screenshots are in [`docs/demo/mainnet-2026-10-06`](docs/demo/mainnet-2026-10-06/README.md).
+- Two sub-agent escrows were funded, delivered and settled automatically: 1.96 USDC on a matching SHA-256, and 0.98 USDC on the payer's approval.
+- This was an internal demo: Select Team wallets only.
+
+![mainnet run](docs/demo/mainnet-2026-10-06/screenshots/0-terminal-run.png)
 
 ## MCP server
+
+Setup for Claude Code and other MCP clients: [`docs/mcp-quickstart.md`](docs/mcp-quickstart.md).
 
 ```bash
 CREW_RPC_URL=<rpc> CREW_WALLET=<keypair.json> gibwork-crew-mcp

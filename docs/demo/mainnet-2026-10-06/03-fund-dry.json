@@ -1,0 +1,30 @@
+{
+  "lines": [
+    {
+      "id": "mcp-docs",
+      "task": "6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+      "grossUsdc": "2",
+      "feeUsdc": "0.04",
+      "calleeReceivesUsdc": "1.96",
+      "rentLockedSol": "0.004049",
+      "rentReturnedSol": "0.002865",
+      "blocking": [],
+      "warnings": []
+    },
+    {
+      "id": "review",
+      "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+      "grossUsdc": "1",
+      "feeUsdc": "0.02",
+      "calleeReceivesUsdc": "0.98",
+      "rentLockedSol": "0.004049",
+      "rentReturnedSol": "0.002865",
+      "blocking": [],
+      "warnings": []
+    }
+  ],
+  "totalGrossUsdc": "3",
+  "funded": [],
+  "confirmed": false,
+  "next": "dry run: nothing was signed. Re-run with --yes to fund these escrows."
+}

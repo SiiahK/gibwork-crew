@@ -1,0 +1,6 @@
+{
+  "written": "crew.json",
+  "gates": [],
+  "subtasks": 2,
+  "next": "gibwork-crew fund crew.json"
+}

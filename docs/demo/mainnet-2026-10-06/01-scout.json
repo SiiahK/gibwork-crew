@@ -1,0 +1,100 @@
+{
+  "scanned": 9,
+  "ranked": [
+    {
+      "id": "1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+      "title": "Gibwork Developer Hackathon Bounty",
+      "rewardUsdc": "1000",
+      "symbol": "USDC",
+      "deadline": "2026-10-30T04:00:00.000Z",
+      "totalSubmissions": 9,
+      "slotsRemaining": null,
+      "tags": [
+        "Development"
+      ],
+      "gates": [],
+      "score": 100,
+      "why": "100.00 USDC per competing submission"
+    },
+    {
+      "id": "25ab1f78-6afd-4e59-aa89-10e9c19fe304",
+      "title": "Create an X thread and IronVaults vault",
+      "rewardUsdc": "100",
+      "symbol": "USDC",
+      "deadline": "2026-10-14T14:34:43.452Z",
+      "totalSubmissions": 26,
+      "slotsRemaining": 124,
+      "tags": [
+        "Social Media"
+      ],
+      "gates": [],
+      "score": 3.7,
+      "why": "3.70 USDC per competing submission"
+    },
+    {
+      "id": "d8c7530d-b3b1-4c5b-80ef-a71a0e804ce7",
+      "title": "Invite Users, Earn Points, and Climb the Leaderboard",
+      "rewardUsdc": "125",
+      "symbol": "USDC",
+      "deadline": "2026-10-14T20:00:00.000Z",
+      "totalSubmissions": 62,
+      "slotsRemaining": 4938,
+      "tags": [
+        "Social Media"
+      ],
+      "gates": [],
+      "score": 1.98,
+      "why": "1.98 USDC per competing submission"
+    },
+    {
+      "id": "ea35598a-0cee-4c9f-b55a-6302ab1c63ad",
+      "title": "How Often Do You Add to Your BASIS Stake? Pick ONE angle",
+      "rewardUsdc": "150",
+      "symbol": "USDC",
+      "deadline": "2026-10-19T05:26:08.064Z",
+      "totalSubmissions": 283,
+      "slotsRemaining": null,
+      "tags": [
+        "Social Media"
+      ],
+      "gates": [],
+      "score": 0.53,
+      "why": "0.53 USDC per competing submission"
+    },
+    {
+      "id": "5f073804-bb43-49c9-99c0-3fb498180465",
+      "title": "Create a UGC Video Bounty for the Gibwork Mobile App",
+      "rewardUsdc": "300",
+      "symbol": "USDC",
+      "deadline": "2026-10-30T04:00:00.000Z",
+      "totalSubmissions": 42,
+      "slotsRemaining": null,
+      "tags": [
+        "Social Media"
+      ],
+      "gates": [
+        "twitter"
+      ],
+      "score": -993.02,
+      "why": "gated (twitter): needs a human step"
+    },
+    {
+      "id": "7bfb8aeb-560c-41ae-9dc8-70f65326b59f",
+      "title": "Invite a UGC Creator to Gibwork and Get a Reply — Round 2",
+      "rewardUsdc": "30",
+      "symbol": "USDC",
+      "deadline": "2026-10-15T03:59:00.000Z",
+      "totalSubmissions": 11,
+      "slotsRemaining": 19,
+      "tags": [
+        "Social Media"
+      ],
+      "gates": [
+        "verified-account",
+        "premium"
+      ],
+      "score": -997.5,
+      "why": "gated (verified-account, premium): needs a human step"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "mode": "dry",
+  "taskId": "1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+  "contentBytes": 609,
+  "idempotencyKey": "gwc-submit-1052f22d-3f87-4b1d-b0d7-71a60679e7fa-d94f51f153e27ec7576f0c04",
+  "next": "nothing sent. --quote asks Gibwork for the participation fee (pending intent, no payment); --yes pays it and submits."
+}

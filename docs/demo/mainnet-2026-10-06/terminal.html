@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#0d1117;font:13px/1.45 Menlo,monospace;color:#c9d1d9}
+.w{max-width:1180px;margin:0 auto;padding:22px 28px} .h{color:#8b949e;margin-bottom:14px}
+.p{color:#7ee787;margin-top:14px} b{color:#e6edf3;font-weight:normal} pre{margin:4px 0 0 0;white-space:pre-wrap;color:#c9d1d9}
+</style></head><body><div class="w"><div class="h">gibwork-crew — Solana mainnet run, 2026-10-06 00:37–00:58 UTC. Rendered from the recorded JSON output in this folder; values unmodified.</div><div class="p">$ <b>gibwork-crew scout --pages 3</b></div><pre>{
+  &quot;scanned&quot;: 9,
+  &quot;ranked&quot;: [
+    {
+      &quot;id&quot;: &quot;1052f22d-3f87-4b1d-b0d7-71a60679e7fa&quot;,
+      &quot;title&quot;: &quot;Gibwork Developer Hackathon Bounty&quot;,
+      &quot;rewardUsdc&quot;: &quot;1000&quot;,
+      &quot;totalSubmissions&quot;: 9,
+      &quot;gates&quot;: [],
+      &quot;why&quot;: &quot;100.00 USDC per competing submission&quot;
+    },
+    {
+      &quot;id&quot;: &quot;25ab1f78-6afd-4e59-aa89-10e9c19fe304&quot;,
+      &quot;title&quot;: &quot;Create an X thread and IronVaults vault&quot;,
+      &quot;rewardUsdc&quot;: &quot;100&quot;,
+      &quot;totalSubmissions&quot;: 26,
+      &quot;gates&quot;: [],
+      &quot;why&quot;: &quot;3.70 USDC per competing submission&quot;
+    },
+    {
+      &quot;id&quot;: &quot;d8c7530d-b3b1-4c5b-80ef-a71a0e804ce7&quot;,
+      &quot;title&quot;: &quot;Invite Users, Earn Points, and Climb the Leaderboard&quot;,
+      &quot;rewardUsdc&quot;: &quot;125&quot;,
+      &quot;totalSubmissions&quot;: 62,
+      &quot;gates&quot;: [],
+      &quot;why&quot;: &quot;1.98 USDC per competing submission&quot;
+    },
+    &quot;… (6 ranked)&quot;
+  ]
+}</pre><div class="p">$ <b>gibwork-crew plan 1052f22d-… --budget 3 --deadline 21600 --sub &quot;mcp-docs|…|2PbLh9…|2|2e7b6748…&quot; --sub &quot;review|…|9vqqr1…|1&quot;</b></div><pre>{
+  &quot;written&quot;: &quot;crew.json&quot;,
+  &quot;gates&quot;: [],
+  &quot;subtasks&quot;: 2,
+  &quot;next&quot;: &quot;gibwork-crew fund crew.json&quot;
+}</pre><div class="p">$ <b>gibwork-crew fund crew.json</b></div><pre>{
+  &quot;lines&quot;: [
+    {
+      &quot;id&quot;: &quot;mcp-docs&quot;,
+      &quot;task&quot;: &quot;6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36&quot;,
+      &quot;grossUsdc&quot;: &quot;2&quot;,
+      &quot;feeUsdc&quot;: &quot;0.04&quot;,
+      &quot;calleeReceivesUsdc&quot;: &quot;1.96&quot;,
+      &quot;blocking&quot;: [],
+      &quot;warnings&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;review&quot;,
+      &quot;task&quot;: &quot;CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4&quot;,
+      &quot;grossUsdc&quot;: &quot;1&quot;,
+      &quot;feeUsdc&quot;: &quot;0.02&quot;,
+      &quot;calleeReceivesUsdc&quot;: &quot;0.98&quot;,
+      &quot;blocking&quot;: [],
+      &quot;warnings&quot;: []
+    }
+  ],
+  &quot;totalGrossUsdc&quot;: &quot;3&quot;,
+  &quot;funded&quot;: [],
+  &quot;confirmed&quot;: false,
+  &quot;next&quot;: &quot;dry run: nothing was signed. Re-run with --yes to fund these escrows.&quot;
+}</pre><div class="p">$ <b>gibwork-crew fund crew.json --yes   # mcp-docs was funded on the previous attempt (see notes)</b></div><pre>{
+  &quot;confirmed&quot;: true,
+  &quot;funded&quot;: [
+    {
+      &quot;id&quot;: &quot;review&quot;,
+      &quot;task&quot;: &quot;CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4&quot;,
+      &quot;signature&quot;: &quot;1uxCsNtMDxksFCYj6LyqqzbRnmjEAB8z2ouN3TAEHrkverBWS8EBMe5hfySVtRAQvLqwsy3Pn6dodJdhnUbCZ82&quot;
+    }
+  ]
+}</pre><div class="p">$ <b>gibwork-crew collect crew.json --from outputs --approve review</b></div><pre>{
+  &quot;actions&quot;: [
+    {
+      &quot;id&quot;: &quot;mcp-docs&quot;,
+      &quot;action&quot;: &quot;delivered&quot;,
+      &quot;detail&quot;: &quot;sha256 2e7b674861b9a314a164fc1700b2fd9d9bfd91e4a2b3b171497f76c02776d85f matches; settlement pending&quot;
+    },
+    {
+      &quot;id&quot;: &quot;review&quot;,
+      &quot;action&quot;: &quot;approved&quot;,
+      &quot;detail&quot;: &quot;intake answered 202&quot;
+    }
+  ]
+}</pre><div class="p">$ <b>gibwork-crew status crew.json   # 15 s later</b></div><pre>{
+  &quot;settled&quot;: 2,
+  &quot;total&quot;: 2,
+  &quot;ready&quot;: true
+}</pre><div class="p">$ <b>gibwork-crew submit crew.json --content work.md</b></div><pre>{
+  &quot;mode&quot;: &quot;dry&quot;,
+  &quot;taskId&quot;: &quot;1052f22d-3f87-4b1d-b0d7-71a60679e7fa&quot;,
+  &quot;contentBytes&quot;: 609,
+  &quot;idempotencyKey&quot;: &quot;gwc-submit-1052f22d-3f87-4b1d-b0d7-71a60679e7fa-d94f51f153e27ec7576f0c04&quot;,
+  &quot;next&quot;: &quot;nothing sent. --quote asks Gibwork for the participation fee (pending intent, no payment); --yes pays it and submits.&quot;
+}</pre></div></body></html>

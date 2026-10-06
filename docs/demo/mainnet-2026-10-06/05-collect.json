@@ -1,0 +1,43 @@
+{
+  "actions": [
+    {
+      "id": "mcp-docs",
+      "action": "delivered",
+      "detail": "sha256 2e7b674861b9a314a164fc1700b2fd9d9bfd91e4a2b3b171497f76c02776d85f matches; settlement pending"
+    },
+    {
+      "id": "review",
+      "action": "approved",
+      "detail": "intake answered 202"
+    }
+  ],
+  "status": {
+    "rows": [
+      {
+        "id": "mcp-docs",
+        "amountUsdc": "2",
+        "rule": "artifact_hash",
+        "task": "6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+        "state": "funded",
+        "status": "Funded",
+        "callee": "2PbLh9PqaxNTMNuBrRu8fbH2MvyjifsyuxXnEhxNvJMn",
+        "deadline": "2026-10-06T06:43:21.000Z",
+        "closed": false
+      },
+      {
+        "id": "review",
+        "amountUsdc": "1",
+        "rule": "payer_approval",
+        "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+        "state": "funded",
+        "status": "Funded",
+        "callee": "9vqqr1WE33QcbxCcoFcEmJaBycRLPznpcctGhvfsuCfm",
+        "deadline": "2026-10-06T06:44:18.000Z",
+        "closed": false
+      }
+    ],
+    "settled": 0,
+    "total": 2,
+    "ready": false
+  }
+}

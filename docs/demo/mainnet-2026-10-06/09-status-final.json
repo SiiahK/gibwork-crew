@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "id": "mcp-docs",
+      "amountUsdc": "2",
+      "rule": "artifact_hash",
+      "task": "6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+      "state": "terminal",
+      "status": "completed",
+      "closed": true
+    },
+    {
+      "id": "review",
+      "amountUsdc": "1",
+      "rule": "payer_approval",
+      "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+      "state": "terminal",
+      "status": "completed",
+      "closed": true
+    }
+  ],
+  "settled": 2,
+  "total": 2,
+  "ready": true
+}

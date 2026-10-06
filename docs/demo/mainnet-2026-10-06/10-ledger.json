@@ -1,0 +1,38 @@
+{
+  "gibwork": {
+    "taskId": "1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+    "title": "Gibwork Developer Hackathon Bounty",
+    "submission": null
+  },
+  "subtasks": [
+    {
+      "id": "mcp-docs",
+      "callee": "2PbLh9PqaxNTMNuBrRu8fbH2MvyjifsyuxXnEhxNvJMn",
+      "amountUsdc": "2",
+      "rule": "artifact_hash",
+      "task": "6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+      "fundTx": "5jFQDvqhnfaWahRkwSW1PzED5zrUQwv4UCHhABnkscUA9NZKcHv7Q6NmeLwmxmoUjVJJzGZ96GvH3Qn41Vx6yD9N",
+      "receipt": {
+        "status": "completed",
+        "memo": "rufus://6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+        "url": "https://api.tryaigility.com/v2/receipts/6A5iC8WkBxR2QJTpWbz9nwMm5nBmyydoJZJuKF2kFo36",
+        "checkedAt": "2026-10-06T00:58:22.267Z"
+      }
+    },
+    {
+      "id": "review",
+      "callee": "9vqqr1WE33QcbxCcoFcEmJaBycRLPznpcctGhvfsuCfm",
+      "amountUsdc": "1",
+      "rule": "payer_approval",
+      "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+      "fundTx": "1uxCsNtMDxksFCYj6LyqqzbRnmjEAB8z2ouN3TAEHrkverBWS8EBMe5hfySVtRAQvLqwsy3Pn6dodJdhnUbCZ82",
+      "receipt": {
+        "status": "completed",
+        "memo": "rufus://CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+        "url": "https://api.tryaigility.com/v2/receipts/CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+        "checkedAt": "2026-10-06T00:58:22.289Z"
+      }
+    }
+  ],
+  "spentGrossUsdc": "3"
+}

@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {
+      "id": "review",
+      "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+      "grossUsdc": "1",
+      "feeUsdc": "0.02",
+      "calleeReceivesUsdc": "0.98",
+      "rentLockedSol": "0.004049",
+      "rentReturnedSol": "0.002865",
+      "blocking": [],
+      "warnings": []
+    }
+  ],
+  "totalGrossUsdc": "1",
+  "funded": [
+    {
+      "id": "review",
+      "task": "CL33ExivghNrtvU1ufoER7M6jPSjqEdGju6VVbA5FGT4",
+      "signature": "1uxCsNtMDxksFCYj6LyqqzbRnmjEAB8z2ouN3TAEHrkverBWS8EBMe5hfySVtRAQvLqwsy3Pn6dodJdhnUbCZ82"
+    }
+  ],
+  "confirmed": true
+}
