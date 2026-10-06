@@ -25,7 +25,7 @@ import { web3, connectionReader } from "@selectinfra/agent-adapters/core";
 import { CrewError, loadCrew, saveCrew, usdcToRaw } from "./crew.js";
 import { gibworkAdapter, type GibworkPort } from "./gibwork.js";
 import { collect, fund, ledger, parseSubtaskSpec, plan, scout, status, submit } from "./commands.js";
-import type { EscrowDeps } from "./escrow.js";
+import { clusterClock, type EscrowDeps } from "./escrow.js";
 
 const USAGE = readFileSync(fileURLToPath(import.meta.url), "utf-8").split("\n").slice(2, 20).map((l) => l.replace(/^ \* ?/, "")).join("\n");
 
@@ -46,7 +46,7 @@ function escrowDeps(): EscrowDeps {
   if (!rpc) throw new CrewError("no_rpc", "set CREW_RPC_URL to a Solana mainnet RPC endpoint");
   const conn = new web3.Connection(rpc, "confirmed");
   return {
-    chain: connectionReader(conn), cluster: "mainnet-beta", apiBaseUrl: process.env.SELECT_API ?? "https://api.tryaigility.com",
+    chain: { ...connectionReader(conn), now: clusterClock(conn) }, cluster: "mainnet-beta", apiBaseUrl: process.env.SELECT_API ?? "https://api.tryaigility.com",
     latestBlockhash: () => conn.getLatestBlockhash("confirmed"), affiliate: process.env.SELECT_AFFILIATE || null,
     send: async (tx) => {
       const sig = await conn.sendRawTransaction(tx.serialize());

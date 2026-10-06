@@ -18,7 +18,7 @@ import { web3, connectionReader } from "@selectinfra/agent-adapters/core";
 import { CrewError, checkSpend, parseCrew } from "./crew.js";
 import { gibworkAdapter, type GibworkPort } from "./gibwork.js";
 import { ledger, parseSubtaskSpec, plan, scout, status, SELECT_PILOT_MAX_RAW } from "./commands.js";
-import { fundLine, previewSubtask, workerPolicy, type EscrowDeps } from "./escrow.js";
+import { clusterClock, fundLine, previewSubtask, workerPolicy, type EscrowDeps } from "./escrow.js";
 
 const KEY = z.string().regex(/^[1-9A-HJ-NP-Za-km-z]{32,44}$/);
 
@@ -77,7 +77,7 @@ async function main() {
   if (!rpc) throw new Error("CREW_RPC_URL is required");
   const conn = new web3.Connection(rpc, "confirmed");
   const escrow = (): EscrowDeps => ({
-    chain: connectionReader(conn), cluster: "mainnet-beta", apiBaseUrl: process.env.SELECT_API ?? "https://api.tryaigility.com",
+    chain: { ...connectionReader(conn), now: clusterClock(conn) }, cluster: "mainnet-beta", apiBaseUrl: process.env.SELECT_API ?? "https://api.tryaigility.com",
     latestBlockhash: () => conn.getLatestBlockhash("confirmed"),
     send: async () => { throw new CrewError("read_only", "the MCP server never sends transactions"); },
   });

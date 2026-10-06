@@ -94,6 +94,21 @@ export async function readSubtask(d: EscrowDeps, s: Subtask): Promise<SubtaskSta
   }
 }
 
+const CLOCK_SYSVAR = new PublicKey("SysvarC1ock11111111111111111111111111111111");
+
+/**
+ * Cluster time from the Clock sysvar (unix_timestamp at offset 32): the same clock the program uses for
+ * deadlines, and always available. getBlockTime(latest slot) can fail on RPCs that have not stored the block yet.
+ */
+export function clusterClock(conn: InstanceType<typeof web3.Connection>): () => Promise<number> {
+  return async () => {
+    const a = await conn.getAccountInfo(CLOCK_SYSVAR, "confirmed");
+    if (a && a.data.length >= 40) return Number(a.data.readBigInt64LE(32));
+    const slot = await conn.getSlot("confirmed");
+    return (await conn.getBlockTime(slot).catch(() => null)) ?? Math.floor(Date.now() / 1000);
+  };
+}
+
 export const sha256Hex = (b: Uint8Array) => createHash("sha256").update(b).digest("hex");
 
 /**
