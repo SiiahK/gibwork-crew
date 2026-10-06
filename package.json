@@ -5,9 +5,19 @@
   "type": "module",
   "license": "MIT",
   "author": "Select Team",
-  "repository": { "type": "git", "url": "https://github.com/SiiahK/gibwork-crew.git" },
-  "bin": { "gibwork-crew": "dist/cli.js", "gibwork-crew-mcp": "dist/mcp.js" },
-  "files": ["dist", "README.md", "LICENSE"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SiiahK/gibwork-crew.git"
+  },
+  "bin": {
+    "gibwork-crew": "dist/cli.js",
+    "gibwork-crew-mcp": "dist/mcp.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "prepare": "tsc -p tsconfig.json",
@@ -29,5 +39,7 @@
     "typescript": "5.9.3",
     "vitest": "1.6.1"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }
