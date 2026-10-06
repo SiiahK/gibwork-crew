@@ -2,7 +2,7 @@
 
 Take a [Gibwork](https://gib.work) bounty, split it into subtasks, pay sub-agents **on verified delivery**, and submit the assembled work back to Gibwork. It runs as a terminal CLI and as an MCP server, with no web app.
 
-Entry for the Gibwork Developer Hackathon (non-web-app track).
+Built for the Gibwork Developer Hackathon (non-web-app track). The entry was not submitted: Gibwork requires an active platform account for submissions, and the team chose not to create one.
 
 **Gibwork toolset used:** the official **Gibwork SDK** (`@gibwork/sdk`). It handles discovery (`tasks.listAvailable`, `tasks.get`) and submission (`submissions.prepareCreate`, `submissions.create`, `submissions.getIntent`).
 
