@@ -118,5 +118,10 @@ export async function main(argv = process.argv.slice(2)) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(path.resolve(process.argv[1]))) {
-  main().catch((e) => { console.error(`gibwork-crew: ${e instanceof CrewError ? `[${e.code}] ` : ""}${e.message}`); process.exit(1); });
+  main().catch((e) => {
+    // Gibwork API errors carry the reason in their body (e.g. "An active platform wallet is required to submit work").
+    const reason = typeof e?.body?.message === "string" ? ` — ${e.body.message}` : "";
+    console.error(`gibwork-crew: ${e instanceof CrewError ? `[${e.code}] ` : ""}${e.message}${reason}`);
+    process.exit(1);
+  });
 }
