@@ -119,6 +119,18 @@ export async function status(d: EscrowDeps, crew: Crew) {
 }
 
 /**
+ * Gibwork requires a UUIDv4 idempotency key. It is derived from the task id and the content (SHA-256, then the
+ * version and variant bits set), so the quote and the paid submission of the same text always share one key.
+ */
+export function submissionKey(taskId: string, content: string): string {
+  const b = createHash("sha256").update(`gibwork-crew:submit:${taskId}:`).update(content).digest().subarray(0, 16);
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = b.toString("hex");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+}
+
+/**
  * Gibwork submission, in three steps:
  *  - "dry": no network call; shows what would be submitted.
  *  - "quote": prepareCreate returns the participation fee. It creates a pending intent and pays nothing.
@@ -126,7 +138,7 @@ export async function status(d: EscrowDeps, crew: Crew) {
  */
 export async function submit(g: GibworkPort, crew: Crew, content: string, opts: { mode: "dry" | "quote" | "confirm"; requireAllSettled?: boolean; settled?: boolean }) {
   if (opts.requireAllSettled !== false && !opts.settled) throw new CrewError("not_ready", "not every subtask is settled; run collect first or pass --allow-partial");
-  const idempotencyKey = `gwc-submit-${crew.gibwork.taskId}-${createHash("sha256").update(content).digest("hex").slice(0, 24)}`;
+  const idempotencyKey = submissionKey(crew.gibwork.taskId, content);
   if (opts.mode === "dry") return { mode: "dry" as const, taskId: crew.gibwork.taskId, contentBytes: Buffer.byteLength(content), idempotencyKey };
   const q = await g.prepareSubmission(crew.gibwork.taskId, content, idempotencyKey);
   if (opts.mode === "quote") return { mode: "quote" as const, feeUsdc: q.feeUsdc, feeDestination: q.feeDestination, intentId: q.intentId, expiresAt: q.expiresAt };

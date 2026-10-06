@@ -9,7 +9,7 @@ import nacl from "tweetnacl";
 import { web3, approvalMessage } from "@selectinfra/agent-adapters/core";
 import { checkSpend, parseCrew, rawToUsdc, usdcToRaw, type Crew } from "../src/crew.js";
 import { rank, summarize, type BountySummary, type GibworkPort } from "../src/gibwork.js";
-import { ledger, parseSubtaskSpec, plan, submit, SELECT_PILOT_MAX_RAW } from "../src/commands.js";
+import { ledger, parseSubtaskSpec, plan, submit, submissionKey, SELECT_PILOT_MAX_RAW } from "../src/commands.js";
 import { approveRelease, deliverArtifact, opKey, type EscrowDeps } from "../src/escrow.js";
 
 const lead = web3.Keypair.generate(), writer = web3.Keypair.generate().publicKey.toBase58(), reviewer = web3.Keypair.generate().publicKey.toBase58();
@@ -121,8 +121,11 @@ describe("Gibwork submission", () => {
     expect(await submit(g, crew, "# Work", { mode: "quote", settled: true })).toMatchObject({ mode: "quote", feeUsdc: "0.5" });
     expect(calls.some((c) => c.startsWith("submit"))).toBe(false);
     expect(await submit(g, crew, "# Work", { mode: "confirm", settled: true })).toMatchObject({ mode: "confirm", status: "fulfilled" });
-    const keys = calls.map((c) => c.split(":")[1]);
+    const keys = calls.map((c) => c.slice(c.indexOf(":") + 1));
     expect(new Set(keys).size).toBe(1);
+    expect(keys[0]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+    expect(submissionKey("task-1", "# Work")).toBe(keys[0]);
+    expect(submissionKey("task-1", "# Work v2")).not.toBe(keys[0]);
     await expect(submit(g, crew, "# Work", { mode: "confirm", settled: false })).rejects.toThrow(/not every subtask is settled/);
     expect(ledger(crew).gibwork.submission).toMatchObject({ intentId: "i-1", feeUsdc: "0.5" });
   });
