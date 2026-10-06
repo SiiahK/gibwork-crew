@@ -86,7 +86,11 @@ The full lifecycle ran on Solana mainnet against the live hackathon bounty: scou
 - Two sub-agent escrows were funded, delivered and settled automatically: 1.96 USDC on a matching SHA-256, and 0.98 USDC on the payer's approval.
 - This was an internal demo: Select Team wallets only.
 
-![mainnet run](docs/demo/mainnet-2026-10-06/screenshots/0-terminal-run.png)
+**Demo video (100 s):** [`docs/demo/video/demo.mp4`](docs/demo/video/demo.mp4). It is a real terminal session on the team's server, recorded with [VHS](https://github.com/charmbracelet/vhs) from [`demo.tape`](docs/demo/video/demo.tape).
+- Commands shown: scout and plan on Gibwork production, a dry-run cost preview, then the status, ledger and on-chain USDC movements of the paid mainnet run, and the submission preview.
+- Nothing is spent in the recording.
+
+![demo](docs/demo/video/demo.gif)
 
 ## MCP server
 
