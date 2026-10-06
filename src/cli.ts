@@ -16,7 +16,7 @@
  *      CREW_MAX_SUBTASK_USDC (≤ 10), SELECT_AFFILIATE (optional integrator authority, never the payer).
  */
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, realpathSync } from "node:fs";
 import * as path from "node:path";
 import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
@@ -117,6 +117,6 @@ export async function main(argv = process.argv.slice(2)) {
   }
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(path.resolve(process.argv[1]))) {
   main().catch((e) => { console.error(`gibwork-crew: ${e instanceof CrewError ? `[${e.code}] ` : ""}${e.message}`); process.exit(1); });
 }

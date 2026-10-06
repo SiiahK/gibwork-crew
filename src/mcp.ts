@@ -10,7 +10,7 @@
 
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, realpathSync } from "node:fs";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -91,4 +91,4 @@ async function main() {
   await buildServer({ gibwork, escrow }).connect(new StdioServerTransport());
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) main().catch((e) => { console.error(`[gibwork-crew-mcp] ${e.message}`); process.exit(1); });
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(path.resolve(process.argv[1]))) main().catch((e) => { console.error(`[gibwork-crew-mcp] ${e.message}`); process.exit(1); });
