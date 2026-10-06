@@ -1,0 +1,33 @@
+{
+  "name": "gibwork-crew",
+  "version": "0.1.0",
+  "description": "Take a Gibwork bounty, split it into subtasks and pay sub-agents through Select escrow on verified delivery. Terminal CLI + MCP server; dry-run unless --yes.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Select Team",
+  "repository": { "type": "git", "url": "https://github.com/SiiahK/gibwork-crew.git" },
+  "bin": { "gibwork-crew": "dist/cli.js", "gibwork-crew-mcp": "dist/mcp.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "start": "tsx src/cli.ts",
+    "mcp": "tsx src/mcp.ts"
+  },
+  "dependencies": {
+    "@gibwork/sdk": "0.2.0",
+    "@modelcontextprotocol/sdk": "1.27.1",
+    "@selectinfra/agent-adapters": "github:SiiahK/rufus-agent-adapters#v0.4.1",
+    "tweetnacl": "1.0.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.27",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "vitest": "1.6.1"
+  },
+  "engines": { "node": ">=22" }
+}

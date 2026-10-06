@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tgz
+crew.json
+outputs/
+.env*
+*keypair*.json
+id.json
+.DS_Store
