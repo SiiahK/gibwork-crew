@@ -21,7 +21,7 @@ import * as path from "node:path";
 import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
 import nacl from "tweetnacl";
-import { web3, connectionReader } from "@selectinfra/agent-adapters/core";
+import { web3, connectionReader } from "@selecto-infra/agent-adapters/core";
 import { CrewError, loadCrew, saveCrew, usdcToRaw } from "./crew.js";
 import { gibworkAdapter, type GibworkPort } from "./gibwork.js";
 import { collect, fund, ledger, parseSubtaskSpec, plan, scout, status, submit } from "./commands.js";

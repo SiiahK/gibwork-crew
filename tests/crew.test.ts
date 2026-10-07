@@ -6,7 +6,7 @@
 import { describe, it, expect } from "vitest";
 import { createHash } from "node:crypto";
 import nacl from "tweetnacl";
-import { web3, approvalMessage } from "@selectinfra/agent-adapters/core";
+import { web3, approvalMessage } from "@selecto-infra/agent-adapters/core";
 import { checkSpend, parseCrew, rawToUsdc, usdcToRaw, type Crew } from "../src/crew.js";
 import { rank, summarize, type BountySummary, type GibworkPort } from "../src/gibwork.js";
 import { ledger, parseSubtaskSpec, plan, submit, submissionKey, SELECT_PILOT_MAX_RAW } from "../src/commands.js";

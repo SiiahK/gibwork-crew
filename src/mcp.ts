@@ -14,7 +14,7 @@ import { existsSync, readFileSync, realpathSync } from "node:fs";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { web3, connectionReader } from "@selectinfra/agent-adapters/core";
+import { web3, connectionReader } from "@selecto-infra/agent-adapters/core";
 import { CrewError, checkSpend, parseCrew } from "./crew.js";
 import { gibworkAdapter, type GibworkPort } from "./gibwork.js";
 import { ledger, parseSubtaskSpec, plan, scout, status, SELECT_PILOT_MAX_RAW } from "./commands.js";

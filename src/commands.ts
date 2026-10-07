@@ -7,7 +7,7 @@ import { createHash } from "node:crypto";
 import { CrewError, checkSpend, rawToUsdc, usdcToRaw, type Crew, type Rule, type Subtask } from "./crew.js";
 import { rank, type GibworkPort } from "./gibwork.js";
 import { deliverArtifact, approveRelease, fundLine, fundSubtask, previewSubtask, readSubtask, receiptOf, workerPolicy, type EscrowDeps, type FundLine } from "./escrow.js";
-import type { web3 } from "@selectinfra/agent-adapters/core";
+import type { web3 } from "@selecto-infra/agent-adapters/core";
 
 type Keypair = InstanceType<typeof web3.Keypair>;
 

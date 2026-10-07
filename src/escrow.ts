@@ -11,7 +11,7 @@ import { createHash } from "node:crypto";
 import {
   web3, TaskStatus, approvalMessage, buildCreateInstructions, configPda, decodeProtocolConfig, decodeTask, decodeTombstone,
   previewTask, resolveRoutingDomain, USDC_MINT, PROGRAM_ID, type ChainReader, type TaskPreview, type WorkerPolicy,
-} from "@selectinfra/agent-adapters/core";
+} from "@selecto-infra/agent-adapters/core";
 import { CrewError, type Crew, type Subtask } from "./crew.js";
 
 const { PublicKey, Transaction } = web3;

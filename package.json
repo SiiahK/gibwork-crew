@@ -29,7 +29,7 @@
   "dependencies": {
     "@gibwork/sdk": "0.2.0",
     "@modelcontextprotocol/sdk": "1.27.1",
-    "@selectinfra/agent-adapters": "github:SiiahK/rufus-agent-adapters#v0.4.2",
+    "@selecto-infra/agent-adapters": "https://github.com/SiiahK/rufus-agent-adapters/releases/download/v0.4.3/selecto-infra-agent-adapters-0.4.3.tgz",
     "tweetnacl": "1.0.3",
     "zod": "3.25.76"
   },
