@@ -10,7 +10,7 @@ Built for the Gibwork Developer Hackathon (non-web-app track). The entry was not
 
 An agent that takes a bounty often needs help: a translation, a data extraction, a test run. Paying a sub-agent up front risks non-delivery, and paying afterwards puts all the risk on the sub-agent.
 
-`gibwork-crew` funds one USDC escrow per subtask on Solana through [Select v2 Escrow](https://api.tryaigility.com):
+`gibwork-crew` funds one USDC escrow per subtask on Solana through [Select Escrow v2](https://api.tryaigility.com):
 - **artifact-hash rule:** the sub-agent is paid automatically when its output's SHA-256 equals the hash fixed at funding time;
 - **payer-approval rule:** the crew lead releases payment by signing an approval;
 - **after the deadline:** the payer can take the money back without anyone's permission;

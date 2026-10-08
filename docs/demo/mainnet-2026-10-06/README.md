@@ -2,7 +2,7 @@
 
 This is a real `gibwork-crew` run on Solana mainnet against the live Gibwork bounty "Gibwork Developer Hackathon Bounty" (`1052f22d-3f87-4b1d-b0d7-71a60679e7fa`).
 
-- **Scope:** two subtasks, each paid through Select v2 Escrow on verified delivery.
+- **Scope:** two subtasks, each paid through Select Escrow v2 on verified delivery.
 - **What the sub-agents produced:** the subtask output is a real deliverable of this project, [`docs/mcp-quickstart.md`](../../mcp-quickstart.md). It was paid when its SHA-256 matched the commitment fixed at funding time. The second subtask, a review of that document, was released by the payer's approval.
 - **Internal demo:** the payer and both sub-agents are Select Team wallets. No third party was paid.
 - **Not done:** the Gibwork submission (participation fee) was **not** paid in this run. It ran as a dry run. The only bounty this work genuinely completes is the hackathon bounty itself, so the paid submission is the final entry, sent separately.
