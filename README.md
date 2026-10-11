@@ -10,11 +10,11 @@ Built for the Gibwork Developer Hackathon (non-web-app track). The entry was not
 
 An agent that takes a bounty often needs help: a translation, a data extraction, a test run. Paying a sub-agent up front risks non-delivery, and paying afterwards puts all the risk on the sub-agent.
 
-`gibwork-crew` funds one USDC escrow per subtask on Solana through [Select Escrow v2](https://api.tryaigility.com):
+`gibwork-crew` funds one USDC escrow per subtask on Solana through [Select Escrow](https://api.tryaigility.com/developers) by Select Infrastructure:
 - **artifact-hash rule:** the sub-agent is paid automatically when its output's SHA-256 equals the hash fixed at funding time;
 - **payer-approval rule:** the crew lead releases payment by signing an approval;
 - **after the deadline:** the payer can take the money back without anyone's permission;
-- **receipts:** every subtask leaves a public receipt (`rufus://<task>`).
+- **receipts:** every subtask leaves a public receipt (on-chain memo `rufus://<task>`; Select Escrow, formerly rufus-v2 / internal engine — the prefix is kept for compatibility).
 
 Gibwork's own escrow still pays the bounty winner. Select only covers the sub-agents, so the two are complementary.
 
@@ -32,7 +32,7 @@ git clone https://github.com/SiiahK/gibwork-crew && cd gibwork-crew && npm insta
 |---|---|
 | `CREW_WALLET` | Path to a Solana keypair JSON file. It pays the escrows and is your Gibwork wallet. Never paste keys into chat or into `crew.json` |
 | `CREW_RPC_URL` | Solana mainnet RPC endpoint |
-| `SELECT_API` | Select evidence intake (default `https://api.tryaigility.com`) |
+| `SELECT_API` | Select Settlement API (default `https://api.tryaigility.com`, Select Infrastructure's production endpoint on Solana mainnet) |
 | `GIBWORK_PRODUCTION=1` | Use Gibwork production (default: Gibwork stage) |
 | `CREW_MAX_SUBTASK_USDC` | Per-subtask ceiling, at most 10 (the Select pilot limit) |
 | `SELECT_AFFILIATE` | Optional integrator authority that receives 25% of the Select fee. It is never the payer |
